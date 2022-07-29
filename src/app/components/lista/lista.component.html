@@ -1,0 +1,20 @@
+<div *ngFor="let list of baseDeDatos">
+  <div class="linea" id="linea">
+    <p class="datos" id="datos">
+      <form *ngIf="list.editar" (ngSubmit)="modificarPerfil(list)" #myForm="ngForm" class="form-editar">
+        <label for="input-nombre"> Nombre: </label>
+        <input name="nombre" type="text"  class="edit-inputs" [(ngModel)]="nombreEditar" >
+        <label for="input-dni">DNI:</label>
+        <input name="dni" type="number"  class="edit-inputs" [class.active]="comprobarDni()" [(ngModel)]="dniEditar" >
+        <p *ngIf="comprobarDni(list.dni)" class="mensaje-error">Dni ya ingresado</p>
+        <p *ngIf="errorEspacioEnBlanco" class="mensaje-error">No se puede dejar espacio vacio</p>
+        <button  type="submit"  class="done-button">Done</button>
+
+      </form>
+      <p *ngIf="!list.editar" class="texto">Nombre: {{list.nombre}} ------ DNI: {{list.dni}}</p>
+    <div>
+      <button class="editar-boton"><img [src]=imagenEditar class="editar-imagen" (click)="editarPerfil(list)"></button>
+      <button class="eliminar-boton"><img [src]=imagenEliminar class="eliminar-imagen" (click)="eliminarPerfil(list)"></button>
+    </div>
+  </div>
+</div>

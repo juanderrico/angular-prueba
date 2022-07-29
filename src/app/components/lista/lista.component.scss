@@ -1,0 +1,78 @@
+
+.linea{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+  height:40px;
+}
+.datos{
+  padding-left: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;}
+.eliminar-boton{
+  background-color: grey;
+  border: 0;
+  padding-top:10px;
+  padding-top: 0;
+  padding-right: 5px;
+}
+.eliminar-imagen{
+
+  width:20px;
+  height:20px;
+
+}
+.editar-boton{
+
+  padding-top:10px;
+  background-color: grey;
+  border: 0;
+  padding-top: 0;
+  padding-right: 5px;
+}
+.editar-imagen{
+  width:20px;
+  height:20px;
+}
+.edit-inputs{
+  width:80px;
+  height:20px;
+  border-radius: 8px;
+  background-color: #EBE6C6;
+  border: none;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.form-editar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form{
+font-weight: bold;
+
+}
+.texto{
+  font-weight: bold;
+  color: white;
+}
+.done-button{
+    margin-top: 10px;
+    background-color: #61EC5A;
+    border-radius:8px;
+    border: none;
+    font-weight: bold;
+    height:20px;
+    font-size: 17px;
+}
+.mensaje-error{
+  color:red;
+  font-size: 10px;
+  margin-bottom: 0px;
+}

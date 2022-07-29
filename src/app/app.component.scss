@@ -32,48 +32,6 @@ body{
      height:700px;
      margin-right: 10px;
   }
-  .linea{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-
-    height:40px;
-  }
-  .datos{
-    padding-left: 10px;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .eliminar-boton{
-    background-color: grey;
-    border: 0;
-    padding-top:10px;
-    padding-top: 0;
-    padding-right: 5px;
-  }
-  .eliminar-imagen{
-
-    width:20px;
-    height:20px;
-
-  }
-  .editar-boton{
-
-    padding-top:10px;
-    background-color: grey;
-    border: 0;
-    padding-top: 0;
-    padding-right: 5px;
-  }
-  .editar-imagen{
-    width:20px;
-    height:20px;
-  }
   .footer{
     background-color: salmon;
      width:99%;
@@ -123,37 +81,4 @@ body{
     color:red;
     font-size: 12px;
     margin-bottom: 0px;
-  }
-  .edit-inputs{
-    width:80px;
-    height:20px;
-    border-radius: 8px;
-    background-color: #EBE6C6;
-    border: none;
-    margin-left: 4px;
-  }
-  #done-button{
-
-    width:55px;
-    height:20px;
-    margin: 0;
-    margin-left: 10px;
-
-  }
-  #div-dni{
-    display: flex;
-    align-items: center;
-    margin-left: 4px;
-  }
-  .edit-linea{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  #error{
-    color: red;
-    font-size: 12px;
-    font-weight: lighter;
-    padding: 0;
-    margin: 0;
   }

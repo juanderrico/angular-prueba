@@ -8,25 +8,17 @@
   </nav>
   <div class="content-bar-holder" >
     <div class="content" id="holder">
-      <div *ngFor="let list of baseDeDatos">
-        <div class="linea" id="linea">
-          <p class="datos" id="datos">
-            Nombre: {{list.nombre}} ------ DNI: {{list.dni}}
-          <div>
-            <button class="editar-boton"><img [src]=imagenEditar class="editar-imagen" (click)="editarPerfil()"></button>
-            <button class="eliminar-boton"><img [src]=imagenEliminar class="eliminar-imagen" (click)="eliminarPerfil(list)"></button>
-          </div>
-        </div>
-  </div></div>
+      <app-lista [baseDeDatos]="baseDeDatos"  (eliminar)="eliminarPerfil($event)" (editar)="editarIndex($event)" (modificar)="editarPerfil($event)"></app-lista>
+    </div>
     <div class="sidebar">
       <form (ngSubmit)="agregarADatos()" #myForm="ngForm">
         <label for="input-nombre"> Nombre: </label>
-        <input name="nombre" type="text" id="input-nombre" class="input-text" [(ngModel)]="nombreAgregar">
+        <input name="nombre" type="text" id="input-nombre" class="input-text" value="list.nombre" [(ngModel)]="nombreAgregar">
         <label for="input-dni">DNI:</label>
         <input name="dni" type="number" id="input-dni" class="input-number" [class.active]="comprobarDni()" [(ngModel)]="dniAgregar">
         <p *ngIf="comprobarDni()" class="mensaje-error">Dni ya ingresado</p>
-        <p *ngIf="inputBlanco()" class="mensaje-error">No se puede dejar espacio vacio</p>
-        <button [disabled]="myForm.invalid" type="submit" id="boton-agregar" class="input-button">Agregar</button>
+        <p *ngIf="errorEspacioEnBlanco" class="mensaje-error">No se puede dejar espacio vacio</p>
+        <button  type="submit" id="boton-agregar" class="input-button">Agregar</button>
 
       </form>
     </div>
