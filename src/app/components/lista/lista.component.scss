@@ -48,6 +48,12 @@
   border: none;
   margin-left: 4px;
   margin-right: 4px;
+  &.blanco{
+    background-color: red;
+  }
+  &.dnirepetido{
+    background-color: red;
+  }
 }
 .form-editar{
   display: flex;
@@ -63,7 +69,6 @@ font-weight: bold;
   color: white;
 }
 .done-button{
-    margin-top: 10px;
     background-color: #61EC5A;
     border-radius:8px;
     border: none;

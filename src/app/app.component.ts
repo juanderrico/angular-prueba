@@ -14,6 +14,8 @@ export class AppComponent {
   dniAgregar:number | null=null;
   errorEspacioEnBlanco:boolean=false;
   indexEditar:number=0;
+  dniEnBlanco:boolean=false;
+  nombreEnBlanco:boolean=false;
   editarIndex(list:Persona){
     this.indexEditar=this.baseDeDatos.indexOf(list)
   }
@@ -22,7 +24,9 @@ export class AppComponent {
     this.baseDeDatos.push(new Persona(this.nombreAgregar,this.dniAgregar,false))
     this.nombreAgregar=null;
     this.dniAgregar=null;
-    this.errorEspacioEnBlanco=false;}
+    this.errorEspacioEnBlanco=false;
+    this.nombreEnBlanco=false;
+    this.dniEnBlanco=false;}
     else if(this.inputBlanco()){this.errorEspacioEnBlanco=true}
 
   }
@@ -47,11 +51,23 @@ export class AppComponent {
     }
     inputBlanco(){
       if(this.dniAgregar==null || this.nombreAgregar==null){
+        if(this.dniAgregar==null && this.nombreAgregar==null){
+          this.dniEnBlanco=true;
+          this.nombreEnBlanco=true;
+        }
+        else if (this.nombreAgregar==null) {
+          this.nombreEnBlanco=true;
+          this.dniEnBlanco=false;
+        }
+        else {
+          this.dniEnBlanco=true;
+        this.nombreEnBlanco=false;}
         return true
       }
       else{return false
+        }
 }
-    }
+
 
 
 }

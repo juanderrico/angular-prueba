@@ -10,6 +10,7 @@ body{
     margin:10px;
     height:100px;
     padding-right: 10px;
+    border-radius: 8px;
 
   }
   .navbar{
@@ -18,12 +19,14 @@ body{
     margin:10px;
     height:50px;
     padding-right: 10px;
+    border-radius: 8px;
   }
   .content-bar-holder{
     display: flex;
     width:99%;
     align-items: center;
     margin:10px;
+
   }
 
   .content{
@@ -31,17 +34,20 @@ body{
      width:70%;
      height:700px;
      margin-right: 10px;
+     border-radius: 8px;
   }
   .footer{
     background-color: salmon;
      width:99%;
      height:75px;
      margin: 10px;
+     border-radius: 8px;
   }
   .sidebar{
     background-color: silver;
      width:30%;
      height:700px;
+     border-radius: 8px;
 
   }
   form{
@@ -52,19 +58,15 @@ body{
     font-weight: bold;
 
   }
-  .input-text{
+  .input-agregar{
     border-radius: 8px;
     background-color: #EBE6C6;
     margin-top:5px;
     border: none;
-    margin-bottom:5px;
-  }
-  .input-number{
-    border-radius: 8px;
-    background-color: #EBE6C6;
-    margin-top:5px;
-    border: none;
-    &.active{
+    &.blanco{
+      background-color: red;
+    }
+    &.dnirepetido{
       background-color: red;
     }
   }

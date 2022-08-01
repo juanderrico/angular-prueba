@@ -17,6 +17,8 @@ export class ListaComponent implements OnInit {
   nombreEditar:string | null=null;
   dniEditar:number | null=null;
   errorEspacioEnBlanco:boolean=false;
+  nombreEnBlanco:boolean=false;
+  dniEnBlanco:boolean=false;
 
   eliminarPerfil(object:Persona){
    this.eliminar.emit(object)
@@ -33,6 +35,8 @@ export class ListaComponent implements OnInit {
     this.editar.emit(object)
     this.modificar.emit(new Persona(this.nombreEditar,this.dniEditar,false))
     this.editarBool=false
+    this.nombreEnBlanco=false;
+    this.dniEnBlanco  =false;
   }
   else if(this.inputBlanco()){this.errorEspacioEnBlanco=true}}
 
@@ -42,15 +46,27 @@ export class ListaComponent implements OnInit {
       if(dni!=this.dniEditar && list.dni==this.dniEditar){
         return true
       }
-        }  return active
+    }  return false
     }
 
     inputBlanco(){
       if(this.dniEditar==null || this.nombreEditar==null){
+        if(this.dniEditar==null && this.nombreEditar==null){
+          this.dniEnBlanco=true;
+          this.nombreEnBlanco=true;
+        }
+        else if (this.nombreEditar==null) {
+          this.nombreEnBlanco=true;
+          this.dniEnBlanco=false;
+        }
+        else {
+          this.dniEnBlanco=true;
+        this.nombreEnBlanco=false;}
         return true
       }
-      else{return false}
-    }
+      else{return false
+        }
+}
 
   constructor() { }
 
