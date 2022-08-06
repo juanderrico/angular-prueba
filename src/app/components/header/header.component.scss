@@ -1,0 +1,37 @@
+.sidemenu{}
+.menu{
+
+  width:100px;
+  background-color: grey;
+  transition: all ease-out 0.5s;
+  border-radius: 8px;
+
+}
+
+
+ul {
+  padding: 0;
+  margin-left: 8px;
+}
+li {
+  list-style-type: none;
+  color:black;
+  font-weight: bold;
+  padding:0px;
+  margin: 0;
+  font-size: 14px;
+
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.button-menu{
+  border-radius: 8px;
+  margin-left: 8px;
+  margin-top: 4px;
+}
+.imagen-menu{
+  width:20px;
+  height:20px;
+}
