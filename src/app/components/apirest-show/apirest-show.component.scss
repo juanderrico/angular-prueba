@@ -1,0 +1,22 @@
+.holder{background-color: grey;
+ width:99%;
+ height:700px;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ margin-left: 10px;
+ border-radius: 8px;}
+.product-image{
+  width: 100px;
+  height: 100px;
+  margin-bottom: 4px;
+}
+.price{margin:0;}
+.product{
+  margin: 8px;
+
+}
+.description{
+  font-size: 12px;
+  margin: 0;
+}

@@ -1,0 +1,56 @@
+.content-bar-holder{
+  display: flex;
+  width:99%;
+  align-items: center;
+  margin:10px;
+
+}
+
+.content{
+  background-color: grey;
+   width:70%;
+   height:700px;
+   margin-right: 10px;
+   border-radius: 8px;
+}
+.sidebar{
+  background-color: silver;
+   width:30%;
+   height:700px;
+   border-radius: 8px;
+
+}
+form{
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-weight: bold;
+
+}
+.input-agregar{
+  border-radius: 8px;
+  background-color: #EBE6C6;
+  margin-top:5px;
+  border: none;
+  &.blanco{
+    background-color: red;
+  }
+  &.dnirepetido{
+    background-color: red;
+  }
+}
+.input-button{
+  margin-top: 10px;
+  background-color: #61EC5A;
+  border-radius:8px;
+  border: none;
+  font-weight: bold;
+  height:20px;
+  font-size: 17px;
+}
+.mensaje-error{
+  color:red;
+  font-size: 12px;
+  margin-bottom: 0px;
+}
