@@ -10,6 +10,7 @@ export class ProductsService {
     constructor(private http:HttpClient) { }
     getAllProducts(){
       return this.http.get<Car[]>("https://young-sands-07814.herokuapp.com/api/products"
+
   )
 }}
 
@@ -20,6 +21,7 @@ export class ProductsService {
     images:string[];
     description:string;
     category:string;
+    showDes:boolean;
 
 
 }

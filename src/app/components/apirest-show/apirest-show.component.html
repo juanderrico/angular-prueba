@@ -1,12 +1,19 @@
 <div class="holder">
-<div *ngFor="let products of vehiculos"  >
+<div *ngFor="let products of productos">
   <div class="product">
     <img [src]="products.images" class="product-image">
     <p class="price">${{products.price}}</p>
-
-
-    <p *ngIf="showDescription" class="description">{{products.description}}</p>
-    <button type="button" (click)="toggleDescription()"></button>
+    <button type="button" (click)="toggleDescription(products)" class="description-button"><img src="../../../assets/images/flechaparaabajo.png" class="img-button"></button>
     </div>
   </div>
 </div>
+<div class="product-detail" [class.active]="showDescription" >
+  <div>
+  <img [src]="productImages" class="product-img">
+  <p class="description-title">{{productTitle}}</p>
+  <p class="description-price">${{productPrice}}</p>
+  <p class="description-image">{{productDescription}}</p>
+  
+  </div>
+  <button (click)="hideDescription()"><img src="../../../assets/images/flechaizq.png" class="ocultar"></button>
+  </div>

@@ -8,10 +8,23 @@ import { ProductsService } from "../../services/products.service"
 })
 export class APIRestShowComponent implements OnInit {
   load:boolean=false;
-  vehiculos:Car[]=[];
+  productos:Car[]=[];
   showDescription:boolean=false;
-  toggleDescription(){
-    this.showDescription=!this.showDescription
+  productDescription:string="";
+  productTitle:string="";
+  productPrice:number=0;
+  productImages:string[]=[];
+
+  hideDescription(){
+    this.showDescription=false;
+  }
+  toggleDescription(product:Car){
+    this.showDescription=true;
+    this.productDescription=product.description;
+    this.productTitle=product.title;
+    this.productPrice=product.price;
+    this.productImages=product.images;
+
   }
     constructor(
       private vehicles:ProductsService
@@ -20,8 +33,8 @@ export class APIRestShowComponent implements OnInit {
 
     ngOnInit(): void {
       this.vehicles.getAllProducts()
-      .subscribe(data=>{this.vehiculos=data});
-      console.log(this.vehiculos)
+      .subscribe(data=>{this.productos=data});
+
 
     }
 
@@ -33,5 +46,6 @@ export interface Car {
   images:string[];
   description:string;
   category:string;
+
 
 }
