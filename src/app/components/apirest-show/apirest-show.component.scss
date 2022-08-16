@@ -6,67 +6,30 @@
  flex-wrap: wrap;
  margin-left: 10px;
  border-radius: 8px;
-overflow-y: scroll;}
-.product-image{
-  width: 100px;
-  height: 100px;
-  margin-bottom: 4px;
 }
-.price{margin:0;
-color: white;
-font-weight: bold;}
-.product{
-  margin: 8px;
-
+.page-button{
+  width: 20px;
+  height: 20px;
+  align-self: center;
 }
-.description{
-  font-size: 12px;
-  margin: 0;
-}
-.description-button{
-padding: 0;
-visibility: hidden;
-width: 20px;
-height:20px;
-}
-.img-button{
-  visibility: visible;
-  width:20px;
-  height:20px;
-}
-.product-detail {
+.agregar {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 65%;
   bottom: 0;
-  right: 65%;
+  right: 0;
   background-color: #CDEBC6;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   transition: all ease-out .5s;
-  transform: translateX(-100%);
+  transform: translateX(100%);
   &.active{
     transform: translateX(0);
   }
 }
-.description{}
-.description-title{
-  font-weight: bold;
-  font-size: 18px;
-  margin: 0;
-  margin-top: 8px;
-}
-.product-img{
-  width:100%
-}
-.description-price{
-  font-weight: bold;
-  font-size: 16px;
-  margin: 0;
-  margin-top: 8px;
-}
-.ocultar{
-  width:20px;
-  height:100%
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }

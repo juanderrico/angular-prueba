@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BaseDeDatosService } from '../../services/base-de-datos.service';
+import { Persona } from "../../models/persona.model"
 
 @Component({
   selector: 'app-content-bar',
@@ -21,7 +22,7 @@ export class ContentBarComponent implements OnInit {
   }
   agregarADatos(){
   if(!this.comprobarDni() && !this.inputBlanco()){
-    this.baseDeDatos.agregarADatos(new Persona(this.nombreAgregar,this.dniAgregar,false))
+    this.baseDeDatos.agregarADatos(new Persona(this.nombreAgregar,false,this.dniAgregar))
     this.nombreAgregar=null;
     this.dniAgregar=null;
     this.errorEspacioEnBlanco=false;
@@ -79,15 +80,3 @@ export class ContentBarComponent implements OnInit {
     }
 
   }
-
-
-export class Persona{
- dni;
- nombre;
- editar;
-
-  constructor(n:string | null,d:number | null,e:boolean) {
-    this.dni=d;
-    this.nombre=n;
-    this.editar=e;
-  }}

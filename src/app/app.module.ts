@@ -9,6 +9,8 @@ import { ListaComponent } from './components/lista/lista.component';
 import { HeaderComponent } from './components/header/header.component';
 import { APIRestShowComponent } from './components/apirest-show/apirest-show.component';
 import { ContentBarComponent } from './components/content-bar/content-bar.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ShowProductComponent } from './components/show-product/show-product.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { ContentBarComponent } from './components/content-bar/content-bar.compon
     ListaComponent,
     HeaderComponent,
     APIRestShowComponent,
-    ContentBarComponent
+    ContentBarComponent,
+    ProductDetailComponent,
+    ShowProductComponent
 
   ],
   imports: [

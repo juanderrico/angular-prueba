@@ -1,27 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-
+import { HttpClient } from '@angular/common/http';
+import { Product, CreateProductDTO } from '../models/product.model';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-
+    apiUrl="https://young-sands-07814.herokuapp.com/api/products";
     constructor(private http:HttpClient) { }
-    getAllProducts(){
-      return this.http.get<Car[]>("https://young-sands-07814.herokuapp.com/api/products"
+    getAllProducts(limit:number, offset:number){
+      return this.http.get<Product[]>(`${this.apiUrl}` , {
+        params: {limit,offset }
+      }
+    )
+  }
 
-  )
-}}
+    getSpecificProduct(id:number){
+      return this.http.get<Product>(`${this.apiUrl}/${id}`)}
 
-  export interface Car {
-    id:number;
-    title:string;
-    price:number;
-    images:string[];
-    description:string;
-    category:string;
-    showDes:boolean;
-
-
-}
+    addProduct(object: CreateProductDTO){
+      return this.http.post<CreateProductDTO>(this.apiUrl,object)
+    }
+    editProduct(id:string, object:Product){
+      return this.http.put<Product>(this.apiUrl,object)
+    }}

@@ -1,0 +1,20 @@
+<div class="description" [class.active]="showDescription">
+<div>
+<img [src]="product.images" class="product-img">
+<p *ngIf="!editproduct" class="description-title">{{product.title}}</p>
+<p *ngIf="!editproduct" class="description-price">${{product.price}}</p>
+<p *ngIf="!editproduct" class="description-image">{{product.description}}</p>
+<form *ngIf="editproduct" (ngSubmit)="editarApi()" #myForm="ngForm">
+  <label for="Title"> Title: </label>
+  <input name="title" type="text"  value="list.nombre" [(ngModel)]="productoAEditar.title">
+  <label for="input-dni">Price:</label>
+  <input name="price" type="number"  [(ngModel)]="productoAEditar.price">
+  <label for="input-dni">Description:</label>
+  <input name="description" type="text" [(ngModel)]="productoAEditar.description">
+  <label for="input-dni">Images:</label>
+  <input name="price" type="string"  [(ngModel)]="productoAEditar.images">
+  <button  type="submit"  class="input-button">Agregar</button></form>
+<button type="button" (click)="toggleEditar()" class="page-button">editar</button>
+</div>
+<button (click)="toggleDesc()"><img src="../../../assets/images/flechaizq.png" class="ocultar"></button>
+</div>

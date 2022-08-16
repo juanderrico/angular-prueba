@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
+import { Persona } from "../../models/persona.model"
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
@@ -33,7 +33,7 @@ export class ListaComponent implements OnInit {
   modificarPerfil(object:Persona){
     if(!this.comprobarDni(object.dni) && !this.inputBlanco()){
     this.editar.emit(object)
-    this.modificar.emit(new Persona(this.nombreEditar,this.dniEditar,false))
+    this.modificar.emit(new Persona(this.nombreEditar,false,this.dniEditar))
     this.editarBool=false
     this.nombreEnBlanco=false;
     this.dniEnBlanco  =false;
@@ -71,13 +71,3 @@ export class ListaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {}}
-  export class Persona{
-   dni;
-   nombre;
-   editar;
-
-    constructor(n:string | null,d:number | null, e:boolean) {
-      this.dni=d;
-      this.nombre=n;
-      this.editar=e;
-    }}

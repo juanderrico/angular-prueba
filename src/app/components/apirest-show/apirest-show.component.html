@@ -1,19 +1,23 @@
-<div class="holder">
-<div *ngFor="let products of productos">
-  <div class="product">
-    <img [src]="products.images" class="product-image">
-    <p class="price">${{products.price}}</p>
-    <button type="button" (click)="toggleDescription(products)" class="description-button"><img src="../../../assets/images/flechaparaabajo.png" class="img-button"></button>
-    </div>
-  </div>
+<div class="holder" >
+
+    <app-show-product  (description)=toggleDescription($event) (agregar)=toggleAgregar()></app-show-product>
+
+
 </div>
 <div class="product-detail" [class.active]="showDescription" >
-  <div>
-  <img [src]="productImages" class="product-img">
-  <p class="description-title">{{productTitle}}</p>
-  <p class="description-price">${{productPrice}}</p>
-  <p class="description-image">{{productDescription}}</p>
-  
+<app-product-detail [showDescription]="showDescription" [product]="specificProduct" (cerrar)="hideDescription()" ></app-product-detail>
+
   </div>
-  <button (click)="hideDescription()"><img src="../../../assets/images/flechaizq.png" class="ocultar"></button>
-  </div>
+  <div class="agregar" [class.active]="showAgregar">
+      <form (ngSubmit)="agregarApi()" #myForm="ngForm">
+        <label for="Title"> Title: </label>
+        <input name="title" type="text"  value="list.nombre" [(ngModel)]="productoAAgregar.title">
+        <label for="input-dni">Price:</label>
+        <input name="price" type="number"  [(ngModel)]="productoAAgregar.price">
+        <label for="input-dni">Description:</label>
+        <input name="description" type="text" [(ngModel)]="productoAAgregar.description">
+        <label for="input-dni">Images:</label>
+        <input name="price" type="string"  [(ngModel)]="productoAAgregar.images">
+        <button  type="submit"  class="input-button">Agregar</button></form>
+
+    </div>
